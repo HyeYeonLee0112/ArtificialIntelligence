@@ -1,24 +1,53 @@
 # 인공지능 · Artificial Intelligence
 
-서울여대 2026-2학기 · 전공필수 · 3학점 · 수 5–6교시
+> 퍼셉트론부터 CNN·객체탐지·분할·RNN·생성모델까지 PyTorch 실험 기록과 모델 배포.
 
-고전 AI(탐색·추론)부터 CNN·객체탐지·분할·RNN/LSTM·AE/VAE·GAN까지. 코드를 실행한 것보다 **어떤 조건을 바꿨고 결과가 왜 달라졌는지**를 설명하는 데 중점을 둔다.
+## 커리큘럼 & 구현 현황
 
-## 이 레포에 남기는 것
+**상태** ⬜ 예정 · 🟨 진행 · ✅ 완료
+**깊이** `📖 개념` · `✏️ 손계산` · `🔨 구현+테스트` · `📊 실험+측정` · `⚡ 조건 비교·해석`
 
-- 매주 `가설 → 설정 → 결과 → 해석` 이 갖춰진 실험 (기준 모델 재현 후 조건 하나만 변경)
-- `src/` 재사용 모듈 + `experiments/` 주별 스크립트 + `report_assets/` 생성 그래프
-- `docs/` 수식 유도·트러블슈팅 노트
-- 학기말 `deploy/` — 최고 모델 ONNX export · 양자화 · FastAPI 서빙 · 지연 측정
+### 강의 범위
 
-## 도구
+| 주제 | 상태 | 깊이 | 증거 |
+|---|:--:|:--:|---|
+| 고전 AI: 상태공간 탐색 (DFS·BFS·A\*) | ⬜ | | `experiments/wk02/` |
+| 퍼셉트론 · MLP · 역전파 | ⬜ | | `src/` (정글 NumPy MLP ↔ PyTorch 수치 대조) |
+| 손실 · 최적화 (SGD·Adam·학습률) | ⬜ | | `experiments/wk04/` |
+| CNN 기초 (conv·pooling·출력 크기 계산) | ⬜ | | `experiments/wk05/` |
+| LeNet·AlexNet · ReLU·dropout·augmentation | ⬜ | | `experiments/wk06/` |
+| 모델 평가 (혼동행렬·batchnorm·정규화) | ⬜ | | `experiments/wk07/` |
+| VGG·ResNet · skip connection · 전이학습 | ⬜ | | `experiments/wk09/` |
+| 객체 탐지 (IoU·NMS, 사전학습 해석) | ⬜ | | `experiments/wk10/` |
+| 의미 분할 · U-Net (Dice·IoU) | ⬜ | | `experiments/wk11/` |
+| RNN·LSTM · BPTT · vanishing gradient | ⬜ | | `experiments/wk12/` |
+| Autoencoder · VAE (latent space) | ⬜ | | `experiments/wk13/` |
+| GAN (DCGAN, mode collapse) | ⬜ | | `experiments/wk14/` |
 
-PyTorch (CUDA, 로컬 RTX 5060 Ti / WSL2) · NumPy · matplotlib · pytest
+### 엔지니어링 트랙 *(강의 밖에서 추가)*
 
-## 참고 오픈소스
+| 주제 | 상태 | 깊이 | 증거 |
+|---|:--:|:--:|---|
+| `torch.profiler`로 병목 분석 (데이터 로딩 vs 연산 vs 전송) | ⬜ | | `experiments/wk06/` |
+| 고전 ML (gradient boosting · k-means · PCA) | ⬜ | | `experiments/wk02/` |
+| 모델 배포 (ONNX export · 양자화 · FastAPI · 지연 측정) | ⬜ | | `deploy/` |
 
-[d2l.ai](https://www.d2l.ai/) · [CS231n](https://cs231n.github.io/) · [nanoGPT](https://github.com/karpathy/nanoGPT)
+평가 과제 1–4 (CNN / segmentation / RNN / AE) → `submission/` (학기말 공개)
 
-## 진행
+## 다룬 범위 / 다루지 않은 범위
 
-주차별 할 일은 [Issues](../../issues) 참고.
+- **다룸**: 비전 중심 딥러닝 + 생성모델 기초. 매 실험은 기준 모델 재현 후 조건 하나만 바꿔 비교.
+- **Transformer**: 개념 연결까지 (별도 프로젝트에서 mini-GPT 구현 경험 참조).
+- **안 다룸**: 강화학습, 멀티모달, 대규모 분산 학습, LLM 파인튜닝.
+
+## 실행
+
+로컬 GPU (RTX 5060 Ti / WSL2 / CUDA). `make setup && make test` 후 `python experiments/<name>.py`. 데이터·체크포인트는 커밋하지 않음.
+
+## 진행 상황
+
+주차별 할 일: [Issues](../../issues)
+
+## 수업 정보
+
+[docs/강의계획서.md](docs/강의계획서.md)
