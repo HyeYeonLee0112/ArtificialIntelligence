@@ -1,0 +1,22 @@
+{
+  "python": "3.11.9",
+  "platform": "Windows",
+  "python_seed_repeatable": true,
+  "numpy": "2.4.6",
+  "torch": "2.11.0+cu128",
+  "torchvision": "0.26.0+cu128",
+  "cuda_build": "12.8",
+  "cuda_available": true,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "capability": [
+    12,
+    0
+  ],
+  "torch_seed_repeatable": true,
+  "matmul_ok": true,
+  "numpy_broadcast_shape": [
+    2,
+    3
+  ]
+}

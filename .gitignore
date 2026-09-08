@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.env.*
+data/
+outputs/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+submission/*
+!submission/README.md
+notebooks/course_materials/

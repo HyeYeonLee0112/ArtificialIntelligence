@@ -54,7 +54,7 @@
 | 고전 ML (gradient boosting · k-means · PCA, 필요할 때 선택) | ⬜ | | `experiments/classical_ml/` |
 | 모델 배포 (ONNX export · 양자화 · FastAPI · 지연 측정) | ⬜ | | `deploy/` |
 
-평가 과제 1–4 (CNN / segmentation / RNN / AE) → `submission/` (학기말 공개)
+평가 과제 1–4 → `submission/` (Git 제외). 과제 2·4는 평가표와 주차표의 표현이 달라 [범위 확인표](docs/ROADMAP.md)를 따른다.
 
 ## 현재 스프린트 — W02 고전 AI
 
@@ -89,7 +89,14 @@ reports/REPORT_wk02.md
 
 ## 실행
 
-로컬 GPU (RTX 5060 Ti / WSL2 / CUDA). `make setup && make test` 후 `python experiments/<name>.py`. 데이터·체크포인트는 커밋하지 않음.
+현재 PC에서 확인한 환경은 Windows Python 3.11 + RTX 5070 Ti다. [설치·검사 안내](docs/SETUP.md)에 Windows와 WSL/Linux 명령을 정리했다.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/check_environment.py --require-cuda
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+[15주 실행 계획](docs/ROADMAP.md) → [W02 실습 시작점](experiments/wk02/README.md) → [W02 보고서](reports/REPORT_wk02.md) 순서로 진행한다. 폴더 구조와 공통 도구는 준비되었으며, 알고리즘 구현과 학습 결과는 직접 작성할 예정이다.
 
 ## 진행 상황
 
