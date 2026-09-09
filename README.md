@@ -16,10 +16,10 @@
 
 한 주차는 아래 증거가 모두 있어야 완료(✅)로 바꾼다.
 
-- `experiments/wkNN/`: 다시 실행할 수 있는 최소 실험
-- `tests/`: 핵심 계산이나 동작을 확인하는 테스트
-- `report_assets/wkNN/`: 비교 표·그래프·구조 그림
-- `reports/REPORT_wkNN.md`: 질문, 조건, 결과, 오류 원인, 다음 실험
+- `weeks/wkNN/`: 다시 실행할 수 있는 최소 실험
+- `weeks/wkNN/tests/`: 해당 주제의 문제풀이 검사 (`tests/`는 공통 도구 검사)
+- `weeks/wkNN/assets/`: 비교 표·그래프·구조 그림
+- `weeks/wkNN/REPORT.md`: 질문, 조건, 결과, 오류 원인, 다음 실험
 - 해당 GitHub 이슈: 체크리스트, 실행 명령, 결과 링크, 회상 답변
 
 평가 과제의 답안을 미리 완성하지 않는다. 먼저 빈칸·힌트·의사코드로 구현하고, 본인이 작성한 코드를 리뷰받는다.
@@ -35,22 +35,22 @@
 |---|:--:|:--:|---|
 | 고전 AI: 상태공간·게임 탐색·규칙 추론 (DFS·BFS·A\*·minimax·alpha-beta·IF-THEN) | 🟨 | 📖 | [#2](../../issues/2) · [#22](../../issues/22) · [#23](../../issues/23) |
 | 퍼셉트론 · MLP · 역전파 | ⬜ | | `src/` (정글 NumPy MLP ↔ PyTorch 수치 대조) |
-| 손실 · 최적화 (SGD·Adam·학습률) | ⬜ | | `experiments/wk04/` |
-| CNN 기초 (conv·pooling·출력 크기 계산) | ⬜ | | `experiments/wk05/` |
-| LeNet·AlexNet · ReLU·dropout·augmentation | ⬜ | | `experiments/wk06/` |
-| 모델 평가 (혼동행렬·batchnorm·정규화) | ⬜ | | `experiments/wk07/` |
-| VGG·ResNet · skip connection · 전이학습 | ⬜ | | `experiments/wk09/` |
-| 객체 탐지 (IoU·NMS, 사전학습 해석) | ⬜ | | `experiments/wk10/` |
-| 의미 분할 · U-Net (Dice·IoU) | ⬜ | | `experiments/wk11/` |
-| RNN·LSTM · BPTT · vanishing gradient | ⬜ | | `experiments/wk12/` |
-| Autoencoder · VAE (latent space) | ⬜ | | `experiments/wk13/` |
-| GAN (DCGAN, mode collapse) | ⬜ | | `experiments/wk14/` |
+| 손실 · 최적화 (SGD·Adam·학습률) | ⬜ | | `weeks/wk04/` |
+| CNN 기초 (conv·pooling·출력 크기 계산) | ⬜ | | `weeks/wk05/` |
+| LeNet·AlexNet · ReLU·dropout·augmentation | ⬜ | | `weeks/wk06/` |
+| 모델 평가 (혼동행렬·batchnorm·정규화) | ⬜ | | `weeks/wk07/` |
+| VGG·ResNet · skip connection · 전이학습 | ⬜ | | `weeks/wk09/` |
+| 객체 탐지 (IoU·NMS, 사전학습 해석) | ⬜ | | `weeks/wk10/` |
+| 의미 분할 · U-Net (Dice·IoU) | ⬜ | | `weeks/wk11/` |
+| RNN·LSTM · BPTT · vanishing gradient | ⬜ | | `weeks/wk12/` |
+| Autoencoder · VAE (latent space) | ⬜ | | `weeks/wk13/` |
+| GAN (DCGAN, mode collapse) | ⬜ | | `weeks/wk14/` |
 
 ### 엔지니어링 트랙 *(강의 밖에서 추가)*
 
 | 주제 | 상태 | 깊이 | 증거 |
 |---|:--:|:--:|---|
-| `torch.profiler`로 병목 분석 (데이터 로딩 vs 연산 vs 전송) | ⬜ | | `experiments/wk06/` |
+| `torch.profiler`로 병목 분석 (데이터 로딩 vs 연산 vs 전송) | ⬜ | | `weeks/wk06/` |
 | 고전 ML (gradient boosting · k-means · PCA, 필요할 때 선택) | ⬜ | | `experiments/classical_ml/` |
 | 모델 배포 (ONNX export · 양자화 · FastAPI · 지연 측정) | ⬜ | | `deploy/` |
 
@@ -64,20 +64,19 @@
 | [게임 탐색 #22](../../issues/22) | alpha-beta는 같은 최선 수를 더 적게 탐색해 찾는가? | 작은 게임 트리, 방문/가지치기 노드 비교 |
 | [규칙 추론 #23](../../issues/23) | 사실 출발과 목표 출발은 무엇을 다르게 확인하는가? | 전향/후향 추론 흔적과 규칙 검사 수 |
 
-예상 파일:
+현재 폴더:
 
 ```text
-experiments/wk02/
-├── search.py
-├── game_search.py
-└── rule_inference.py
-tests/
-├── test_search.py
-├── test_minimax.py
-└── test_rule_inference.py
-report_assets/wk02/
-reports/REPORT_wk02.md
+weeks/wk02/
+├── README.md
+├── search.py / game_search.py / rule_inference.py
+├── tests/                 # 주제별 검사
+├── notes/                 # 예습·실행 안내
+├── assets/                # 그래프·측정값
+└── REPORT.md
 ```
+
+실험 규모는 학습자가 정한다. 기본 비교 로그는 내 구현 결과 / 기대 결과 두 줄과 통과 집계만 표시한다.
 
 `gradient boosting`, `k-means`, `PCA`는 W02 완료 조건에서 제외한다. 프로젝트에서 표 데이터나 군집·차원 축소가 실제로 필요해질 때 별도 선택 실험으로 연다.
 
@@ -96,7 +95,7 @@ reports/REPORT_wk02.md
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-[15주 실행 계획](docs/ROADMAP.md) → [W02 실습 시작점](experiments/wk02/README.md) → [W02 보고서](reports/REPORT_wk02.md) 순서로 진행한다. 폴더 구조와 공통 도구는 준비되었으며, 알고리즘 구현과 학습 결과는 직접 작성할 예정이다.
+[15주 실행 계획](docs/ROADMAP.md) → [W02 실습 시작점](weeks/wk02/README.md) → [W02 보고서](weeks/wk02/REPORT.md) 순서로 진행한다. 폴더 구조와 공통 도구는 준비되었으며, 알고리즘 구현과 학습 결과는 직접 작성할 예정이다.
 
 ## 진행 상황
 

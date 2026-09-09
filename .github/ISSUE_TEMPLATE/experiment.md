@@ -23,5 +23,5 @@ labels: experiment
 ## 완료
 - [ ] 직접 작성한 구현과 테스트
 - [ ] 그래프/표와 오류 원인 분석
-- [ ] reports/REPORT_wkNN.md 링크
+- [ ] weeks/wkNN/REPORT.md 링크
 - [ ] 자료를 닫고 회상 3문제 답변

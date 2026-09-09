@@ -10,7 +10,7 @@
 py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
-.\.venv\Scripts\python.exe scripts/check_environment.py --require-cuda --output report_assets/wk01/environment.json
+.\.venv\Scripts\python.exe scripts/check_environment.py --require-cuda --output weeks/wk01/assets/environment.json
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
@@ -33,12 +33,13 @@ requirements.txt는 기본 실험 도구이며 torch/torchvision은 장치에 �
 
 ## 파일 역할
 
-- experiments/wkNN/: 직접 작성하는 주차별 코드
+- weeks/wkNN/: 직접 작성하는 주차별 코드
 - src/: 실험에서 검증한 뒤 공통으로 사용하는 코드
-- tests/: 핵심 계산과 공통 도구 검사
+- weeks/wkNN/tests/: 주제별 문제풀이 검사
+- tests/: 공통 도구 검사
 - notebooks/: 직접 만든 노트북과 로컬 수업 원본
-- reports/: 주차별 질문·결과·오류 분석·회상
-- report_assets/wkNN/: 환경·측정값·그림
+- weeks/wkNN/REPORT.md: 주차별 질문·결과·오류 분석·회상
+- weeks/wkNN/assets/: 환경·측정값·그림
 - docs/HyeYeon/: 손계산과 트러블슈팅
 - submission/: 공개하지 않는 평가 과제 작업
 - deploy/: 수업 이후 선택 배포
