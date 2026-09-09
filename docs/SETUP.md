@@ -1,6 +1,6 @@
 # 실행 환경
 
-2026-09-09 확인: 이 컴퓨터는 RTX 5070 Ti, NVIDIA 드라이버 596.49, Windows Python 3.11이다. 기존 계획의 RTX 5060 Ti와 다르며, WSL에는 docker-desktop만 있어 이번 설정은 Windows 전용 가상환경을 사용한다.
+2026-09-09 확인: 이 컴퓨터는 RTX 5070 Ti, NVIDIA 드라이버 596.49, Windows Python 3.11이다. WSL에는 docker-desktop만 있어 이번 설정은 Windows 전용 가상환경을 사용한다.
 
 ## Windows PowerShell
 
